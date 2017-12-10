@@ -10,6 +10,7 @@ import (
 const subConfrmType = "SubscriptionConfirmation"
 const notificationType = "Notification"
 
+//confirmSubscription Confirms Subscription by makeing get request to Subscribe URL
 func confirmSubscription(subcribeURL string) {
     response, err := http.Get(subcribeURL)
     if(err != nil) {
@@ -20,6 +21,7 @@ func confirmSubscription(subcribeURL string) {
 
 }
 
+//handler processes messages sent by SNS 
 func handler(w http.ResponseWriter, r *http.Request) {
     var f interface{}
     body, err := ioutil.ReadAll(r.Body)

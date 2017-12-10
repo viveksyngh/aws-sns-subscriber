@@ -10,7 +10,7 @@ const endPoint = "https://39cb8fd6.ngrok.io"
 const protocol = "https"
 const topicARN = "arn:aws:sns:ap-south-1:725344396561:open-faas-test"
 
-
+//subscribe sends a subscribe request to SNS topic and initiates the subscritption process
 func subscribe(endPoint string, protocol string, topicARN string) {
 	
 	input := &sns.SubscribeInput{
@@ -18,7 +18,7 @@ func subscribe(endPoint string, protocol string, topicARN string) {
 		Protocol: &protocol,
 		TopicArn: &topicARN,
 	
-	 }
+	}
 
 	sess, err := session.NewSession(&aws.Config{Region: aws.String("ap-south-1"),})
 	if(err != nil) {
