@@ -37,6 +37,8 @@ func subscribe(endPoint string, protocol string, topicARN string) {
 	fmt.Printf(*out.SubscriptionArn)
 }
 
+
+
 //getenv returns env varibale if set otherwise returns default value
 func getenv(key, defaultValue string) string {
 	value := os.Getenv(key)
